@@ -1,0 +1,225 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-pixel: 'Press Start 2P', monospace;
+    --font-vt: 'VT323', monospace;
+    --font-silkscreen: 'Silkscreen', monospace;
+    --font-sans: 'Plus Jakarta Sans', sans-serif;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background-color: #101418;
+    color: #e2e8f0;
+    cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'><path fill='%2300ffcc' stroke='%230f1215' stroke-width='1' d='M16 2h6v6h-2V6h-2V4h-2V2zM14 4h2v2h-2zM12 6h2v2h-2zM10 8h2v2h-2z'/><path fill='%23866043' stroke='%230f1215' stroke-width='1' d='M8 10h2v2H8zM6 12h2v2H6zM4 14h2v2H4zM2 16h2v2H2zM0 18h2v4H0z'/></svg>") 0 0, auto;
+    overflow-x: hidden;
+  }
+
+  /* Custom Pixel Focus Outline for Accessibility */
+  *:focus-visible {
+    outline: 3px solid #00ffcc !important;
+    outline-offset: 3px !important;
+  }
+}
+
+/* Custom Typography Utility Classes */
+.font-pixel {
+  font-family: 'Press Start 2P', cursive, monospace;
+}
+
+.font-vt {
+  font-family: 'VT323', monospace;
+}
+
+.font-silkscreen {
+  font-family: 'Silkscreen', cursive, monospace;
+}
+
+.font-sans {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+/* Minecraft UI Component Utilities */
+.mc-panel {
+  background-color: #26292d;
+  border: 4px solid #14171a;
+  box-shadow: 
+    inset -4px -4px 0px 0px #17191c,
+    inset 4px 4px 0px 0px #3a3f45,
+    6px 6px 0px 0px #090b0d;
+}
+
+.mc-panel-dirt {
+  background-color: #3b281c;
+  background-image: radial-gradient(#2b1d14 20%, transparent 20%), radial-gradient(#4d3424 20%, transparent 20%);
+  background-position: 0 0, 8px 8px;
+  background-size: 16px 16px;
+  border: 4px solid #1c130d;
+  box-shadow: 
+    inset -4px -4px 0px 0px #21160e,
+    inset 4px 4px 0px 0px #543928,
+    6px 6px 0px 0px #090b0d;
+}
+
+.mc-panel-stone {
+  background-color: #484e54;
+  border: 4px solid #1f2226;
+  box-shadow: 
+    inset -4px -4px 0px 0px #2c3034,
+    inset 4px 4px 0px 0px #676f78,
+    6px 6px 0px 0px #0d0f11;
+}
+
+.mc-panel-grass {
+  background-color: #2b2e33;
+  border-top: 8px solid #5d9c3f;
+  border-left: 4px solid #181a1d;
+  border-right: 4px solid #181a1d;
+  border-bottom: 4px solid #181a1d;
+  box-shadow: 
+    inset 0px 4px 0px 0px #79b95b,
+    inset -4px -4px 0px 0px #181a1d,
+    inset 4px 0px 0px 0px #383c42,
+    6px 6px 0px 0px #090b0d;
+}
+
+/* Minecraft Button Styling */
+.mc-button {
+  background-color: #6a7178;
+  border: 4px solid #1d2024;
+  box-shadow: 
+    inset -4px -4px 0px 0px #42464b,
+    inset 4px 4px 0px 0px #919aa3,
+    4px 4px 0px 0px #090a0b;
+  color: #ffffff;
+  text-shadow: 2px 2px 0px #121416;
+  transition: all 0.08s ease-in-out;
+  cursor: pointer;
+  user-select: none;
+}
+
+.mc-button:hover {
+  background-color: #798189;
+  box-shadow: 
+    inset -4px -4px 0px 0px #4b5056,
+    inset 4px 4px 0px 0px #a4afba,
+    4px 4px 0px 0px #090a0b;
+  transform: translateY(-2px);
+}
+
+.mc-button:active {
+  background-color: #4a4f54;
+  box-shadow: 
+    inset 4px 4px 0px 0px #2c3033,
+    inset -4px -4px 0px 0px #676e75,
+    0px 0px 0px 0px #000;
+  transform: translateY(2px);
+}
+
+.mc-button-gold {
+  background-color: #d99b26;
+  border: 4px solid #4a3206;
+  box-shadow: 
+    inset -4px -4px 0px 0px #9e6d11,
+    inset 4px 4px 0px 0px #fce074,
+    4px 4px 0px 0px #090a0b;
+  color: #ffffff;
+  text-shadow: 2px 2px 0px #3d2803;
+}
+
+.mc-button-gold:hover {
+  background-color: #eab035;
+  box-shadow: 
+    inset -4px -4px 0px 0px #b57e17,
+    inset 4px 4px 0px 0px #fff1a4,
+    4px 4px 0px 0px #090a0b;
+}
+
+.mc-button-teal {
+  background-color: #0b8a7b;
+  border: 4px solid #032b27;
+  box-shadow: 
+    inset -4px -4px 0px 0px #055e54,
+    inset 4px 4px 0px 0px #36e6d4,
+    4px 4px 0px 0px #090a0b;
+  color: #ffffff;
+  text-shadow: 2px 2px 0px #021a17;
+}
+
+.mc-button-teal:hover {
+  background-color: #0fa392;
+  box-shadow: 
+    inset -4px -4px 0px 0px #07786b,
+    inset 4px 4px 0px 0px #66faeb,
+    4px 4px 0px 0px #090a0b;
+}
+
+/* Item Frame Graphic Border */
+.item-frame {
+  background-color: #593922;
+  border: 4px solid #2e1d11;
+  box-shadow: 
+    inset -3px -3px 0px 0px #3b2516,
+    inset 3px 3px 0px 0px #7b5133,
+    4px 4px 0px 0px #0f0a07;
+  position: relative;
+}
+
+.item-frame-bg {
+  background-color: #8c7865;
+  border: 3px solid #3d3329;
+  box-shadow: inset 3px 3px 0px 0px #241e18, inset -3px -3px 0px 0px #a6917c;
+}
+
+/* Slot Box (Crafting Table / Hotbar Slot) */
+.mc-slot {
+  background-color: #8b8b8b;
+  border: 3px solid #373737;
+  box-shadow: 
+    inset 3px 3px 0px 0px #373737,
+    inset -3px -3px 0px 0px #ffffff;
+}
+
+/* Custom Minecraft Scrollbar */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: #181b1e;
+  border-left: 2px solid #0b0c0d;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #5d9c3f;
+  border: 2px solid #14171a;
+  box-shadow: inset -2px -2px 0px 0px #3e6d27, inset 2px 2px 0px 0px #82c761;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #6fb54b;
+}
+
+/* Pixel Clouds & Starry Background Animation */
+@keyframes cloudDrift {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100vw); }
+}
+
+.animate-cloud-fast {
+  animation: cloudDrift 45s linear infinite;
+}
+
+.animate-cloud-slow {
+  animation: cloudDrift 85s linear infinite;
+}
+
+@keyframes pulseGlow {
+  0%, 100% { opacity: 0.8; filter: drop-shadow(0 0 8px rgba(0, 255, 204, 0.6)); }
+  50% { opacity: 1; filter: drop-shadow(0 0 16px rgba(0, 255, 204, 0.9)); }
+}
+
+.enchantment-glow {
+  animation: pulseGlow 3s ease-in-out infinite;
+}
