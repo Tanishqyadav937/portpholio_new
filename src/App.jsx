@@ -24,6 +24,7 @@ const craftfolioData = {
     tagline: "Building intelligent machine learning models and secure full-stack applications.",
     about: "B.Tech CSE (Data Science) student at Galgotias University (CGPA 8.56/10). Top 10 Rank in Smart India Hackathon 2025 (Pre-Qualifier Round) & Former Data Analyst Intern at Bluestock Fintech.",
     aboutExtended: "Specializing in Data Structures, Machine Learning, Python, PyTorch, SQL, React, and full-stack enterprise web development with 216+ LeetCode problems solved across Trees, Graphs, DP, and System Design.",
+    resumeUrl: "#resume",
     year: 2026,
   },
   stats: [
@@ -136,9 +137,17 @@ const craftfolioData = {
     { icon: "📚", count: 856 },
   ],
   contactLinks: [
+    { label: "View / Print Full Resume", href: "#resume", icon: "📄" },
     { label: "GitHub Profile", href: "https://github.com/Tanishqyadav937", icon: "🐙" },
     { label: "Email Contact", href: "mailto:tanishqyadav937@gmail.com", icon: "✉️" },
   ],
+};
+
+const craftfolioOptions = {
+  defaultTheme: "day",
+  enable3D: true,
+  showThemeToggle: true,
+  sections: ["hero", "about", "projects", "skills", "experience", "contact"],
 };
 
 export default function App() {
@@ -146,7 +155,7 @@ export default function App() {
   const [resumeOpen, setResumeOpen] = useState(false);
 
   return (
-    <CraftfolioToggle data={craftfolioData} position="bottom-right" persist>
+    <CraftfolioToggle data={craftfolioData} options={craftfolioOptions} position="bottom-right" persist>
       <div className="min-h-screen bg-[#101418] text-[#e2e8f0] font-sans antialiased selection:bg-[#00ffcc] selection:text-[#0f1215]">
         {/* Terrain Generator Loader */}
         {!loadingComplete && (
