@@ -10,9 +10,11 @@ import Timeline from './components/Timeline';
 import Achievements from './components/Achievements';
 import FAQAccordion from './components/FAQAccordion';
 import Footer from './components/Footer';
+import ResumeModal from './components/ResumeModal';
 
 export default function App() {
   const [loadingComplete, setLoadingComplete] = useState(false);
+  const [resumeOpen, setResumeOpen] = useState(false);
 
   return (
     <div className="min-h-screen bg-[#101418] text-[#e2e8f0] font-sans antialiased selection:bg-[#00ffcc] selection:text-[#0f1215]">
@@ -24,9 +26,9 @@ export default function App() {
       {/* Main Minecraft Portfolio Content */}
       <div className={loadingComplete ? 'opacity-100 transition-opacity duration-500' : 'opacity-0'}>
         <MarqueeBanner />
-        <Navbar />
+        <Navbar onOpenResume={() => setResumeOpen(true)} />
         <main>
-          <Hero />
+          <Hero onOpenResume={() => setResumeOpen(true)} />
           <About />
           <SkillTrack />
           <ProjectChest />
@@ -34,7 +36,8 @@ export default function App() {
           <Achievements />
           <FAQAccordion />
         </main>
-        <Footer />
+        <Footer onOpenResume={() => setResumeOpen(true)} />
+        <ResumeModal isOpen={resumeOpen} onClose={() => setResumeOpen(false)} />
       </div>
     </div>
   );

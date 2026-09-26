@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import { Volume2, VolumeX, Menu, X, Compass, Award, Cpu, FolderGit2, BookOpen, MessageSquareCode } from 'lucide-react';
+import { Volume2, VolumeX, Menu, X, Compass, Award, Cpu, FolderGit2, BookOpen, MessageSquareCode, FileText } from 'lucide-react';
 import { toggleSound, getSoundStatus, playClickSound } from '../utils/sound';
 
-export default function Navbar() {
+export default function Navbar({ onOpenResume }) {
   const [soundActive, setSoundActive] = useState(getSoundStatus());
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -70,10 +70,32 @@ export default function Navbar() {
               <span>{link.name}</span>
             </a>
           ))}
+          
+          <button
+            onClick={() => {
+              playClickSound();
+              if (onOpenResume) onOpenResume();
+            }}
+            className="mc-button mc-button-gold px-3 py-1.5 text-xs font-vt tracking-wider uppercase flex items-center space-x-1 text-amber-200"
+          >
+            <FileText className="w-3.5 h-3.5" />
+            <span>RESUME</span>
+          </button>
         </nav>
 
         {/* Action Controls: Sound FX Toggle & Mobile Menu */}
         <div className="flex items-center space-x-3">
+          <button
+            onClick={() => {
+              playClickSound();
+              if (onOpenResume) onOpenResume();
+            }}
+            className="hidden sm:flex lg:hidden mc-button mc-button-gold px-3 py-1.5 text-xs font-vt flex items-center space-x-1 text-amber-200"
+          >
+            <FileText className="w-3.5 h-3.5" />
+            <span>RESUME</span>
+          </button>
+
           <button
             onClick={handleSoundToggle}
             className={`mc-button p-2 text-xs flex items-center justify-center ${
@@ -115,6 +137,16 @@ export default function Navbar() {
               {link.name}
             </a>
           ))}
+          <button
+            onClick={() => {
+              playClickSound();
+              setMobileMenuOpen(false);
+              if (onOpenResume) onOpenResume();
+            }}
+            className="mc-button mc-button-gold block w-full py-2 px-4 text-left font-vt text-lg tracking-wide uppercase text-amber-200"
+          >
+            📜 VIEW FULL RESUME
+          </button>
         </div>
       )}
     </header>

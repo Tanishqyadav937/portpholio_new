@@ -1,6 +1,7 @@
 import React from 'react';
-import { Heart, Trophy, Code2, GraduationCap, Flame, ShieldCheck } from 'lucide-react';
+import { Heart, Trophy, Code2, GraduationCap, ShieldCheck } from 'lucide-react';
 import { playXpSound } from '../utils/sound';
+import avatarImg from '../assets/avatar.jpg';
 
 export default function About() {
   const stats = [
@@ -27,12 +28,12 @@ export default function About() {
     {
       title: 'SIH 2025 RANK',
       value: 'TOP 10',
-      desc: 'Smart India Hackathon',
+      desc: 'Pre-Qualifier Round',
       icon: Trophy,
       color: 'text-amber-400',
       borderColor: 'border-amber-500/50',
       bgGlow: 'bg-amber-500/10',
-      badge: 'NATIONAL WINNER',
+      badge: 'PRE-QUAL TOP 10',
     },
     {
       title: 'INTERNSHIP',
@@ -65,14 +66,27 @@ export default function About() {
         {/* Bio Panel Left */}
         <div className="lg:col-span-7 mc-panel p-6 sm:p-8 flex flex-col justify-between">
           <div>
-            <div className="flex items-center space-x-3 mb-4 pb-3 border-b-2 border-[#16181b]">
-              <GraduationCap className="w-7 h-7 text-emerald-400" />
+            <div className="flex items-center space-x-5 mb-5 pb-4 border-b-2 border-[#16181b]">
+              <div className="w-24 h-32 sm:w-32 sm:h-40 shrink-0 bg-[#221c16] border-4 border-[#5c4028] p-1.5 shadow-[4px_4px_0_#000] relative group">
+                <img
+                  src={avatarImg}
+                  alt="Tanishq Yadav Avatar"
+                  className="w-full h-full object-cover object-top contrast-[1.03]"
+                />
+                <div className="absolute -bottom-2 -right-2 bg-[#121518] px-2 py-0.5 border-2 border-amber-400 text-amber-300 font-pixel text-[10px] shadow-[2px_2px_0_#000]">
+                  LVL 99
+                </div>
+              </div>
               <div>
-                <h3 className="font-pixel text-sm sm:text-base text-white">
+                <h3 className="font-pixel text-sm sm:text-base text-white flex items-center gap-2">
+                  <GraduationCap className="w-5 h-5 text-emerald-400 inline" />
                   CHARACTER SPECS & BACKGROUND
                 </h3>
-                <span className="font-vt text-stone-400 text-lg">
+                <span className="font-vt text-stone-400 text-lg block">
                   Galgotias University, Greater Noida, India
+                </span>
+                <span className="inline-block bg-[#121518] px-2 py-0.5 border border-emerald-500/40 text-emerald-400 font-pixel text-[9px] mt-1">
+                  CLASS: DATA ARCHITECT / FULL-STACK
                 </span>
               </div>
             </div>
@@ -85,7 +99,7 @@ export default function About() {
 
             <p className="font-sans text-stone-300 text-base leading-relaxed mb-6">
               During my internship at <strong className="text-cyan-300">Bluestock Fintech</strong>, I optimized analytical pipelines, 
-              cleaned financial datasets, and built interactive dashboards. Furthermore, achieving a <strong className="text-amber-300">Top 10 standing at Smart India Hackathon 2025</strong> validated 
+              cleaned financial datasets, and built interactive dashboards. Furthermore, achieving a <strong className="text-amber-300">Top 10 standing at Smart India Hackathon 2025 (Pre-Qualifier Round)</strong> validated 
               my ability to design nationwide, high-impact technical systems under intense pressure.
             </p>
           </div>

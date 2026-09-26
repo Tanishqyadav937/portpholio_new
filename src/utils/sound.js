@@ -162,3 +162,30 @@ export const playItemPickupSound = () => {
     // Ignore audio context autoplay errors
   }
 };
+
+// Close Window / Chest Sound
+export const playCloseSound = () => {
+  if (!soundEnabled) return;
+  try {
+    const ctx = getAudioContext();
+    if (!ctx) return;
+
+    const osc = ctx.createOscillator();
+    const gain = ctx.createGain();
+
+    osc.type = 'square';
+    osc.frequency.setValueAtTime(350, ctx.currentTime);
+    osc.frequency.exponentialRampToValueAtTime(175, ctx.currentTime + 0.06);
+
+    gain.gain.setValueAtTime(0.1, ctx.currentTime);
+    gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.06);
+
+    osc.connect(gain);
+    gain.connect(ctx.destination);
+
+    osc.start();
+    osc.stop(ctx.currentTime + 0.06);
+  } catch (e) {
+    // Ignore audio context autoplay errors
+  }
+};

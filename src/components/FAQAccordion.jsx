@@ -16,8 +16,8 @@ export default function FAQAccordion() {
       answer: 'For Data Science & AI: Python, PyTorch, TensorFlow, Scikit-Learn, Pandas, NumPy, OpenCV, and Jupyter. For Web Engineering: React.js, Tailwind CSS, JavaScript (ES6+), Java Servlets / MVC, REST APIs, SQL (MySQL, PostgreSQL), and Git.',
     },
     {
-      question: 'Can you share details about your Smart India Hackathon (SIH 2025) win?',
-      answer: 'Out of thousands of national engineering teams across India, my team achieved a Top 10 Standing. We engineered a real-time system addressing a high-impact national problem statement, presenting live hardware/software integrations to national judges.',
+      question: 'Can you share details about your Smart India Hackathon (SIH 2025) result?',
+      answer: 'Out of thousands of national engineering teams across India, my team achieved a Top 10 Standing in the Pre-Qualifier round of SIH 2025. We engineered the Indian Carbon Registry real-time prototype addressing high-impact national sustainability problem statements.',
     },
     {
       question: 'What were your key responsibilities at Bluestock Fintech?',

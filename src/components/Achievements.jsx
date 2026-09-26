@@ -5,10 +5,10 @@ import { playXpSound } from '../utils/sound';
 export default function Achievements() {
   const trophies = [
     {
-      title: 'SIH 2025 TOP 10',
+      title: 'SIH 2025 PRE-QUALIFIER',
       subtitle: 'Smart India Hackathon',
-      value: 'RANK #10',
-      desc: 'Selected among top national innovator teams across India for real-time engineering solutions.',
+      value: 'TOP 10 RANK',
+      desc: 'Achieved Top 10 Rank in the SIH 2025 Pre-Qualifier round among innovator teams across India.',
       icon: Trophy,
       color: 'text-amber-400',
       frameBorder: 'border-amber-600',

@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Compass, Sparkles, Sun, Moon, ArrowDown, Terminal, ShieldAlert, Award } from 'lucide-react';
+import { Compass, Sparkles, Sun, Moon, ArrowDown, Terminal, FileText } from 'lucide-react';
 import { playClickSound, playTeleportSound } from '../utils/sound';
 
-export default function Hero() {
+import avatarImg from '../assets/avatar.jpg';
+
+export default function Hero({ onOpenResume }) {
   const [isDay, setIsDay] = useState(false);
 
   const toggleDayNight = () => {
@@ -72,6 +74,30 @@ export default function Hero() {
           </span>
         </div>
 
+        {/* Character Skin Avatar Display */}
+        <div className="flex justify-center mb-8">
+          <div className="relative group">
+            {/* Item Frame Glow */}
+            <div className="absolute -inset-1.5 bg-gradient-to-r from-amber-500 via-emerald-500 to-cyan-500 rounded-none opacity-80 blur-md group-hover:opacity-100 transition duration-500 animate-pulse" />
+            
+            {/* Minecraft Item Frame Box */}
+            <div className="relative bg-[#221c16] p-3 border-4 sm:border-8 border-[#5c4028] shadow-[inset_0_0_20px_rgba(0,0,0,0.95),6px_6px_0_#101417]">
+              <div className="w-48 h-64 sm:w-64 sm:h-84 md:w-72 md:h-96 overflow-hidden border-2 border-[#3d2919] bg-[#121518] relative">
+                <img
+                  src={avatarImg}
+                  alt="Tanishq Yadav - Minecraft Character Avatar"
+                  className="w-full h-full object-cover object-top contrast-[1.03] group-hover:scale-105 transition-transform duration-500"
+                />
+                <div className="absolute bottom-0 inset-x-0 bg-black/85 py-1.5 text-center border-t-2 border-amber-500/60 backdrop-blur-xs">
+                  <span className="font-pixel text-[10px] sm:text-xs text-amber-300 tracking-widest uppercase block drop-shadow-[1px_1px_0_#000]">
+                    PLAYER SKIN • LVL 99 DEV
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
         {/* Name Headline */}
         <h1 className="font-pixel text-2xl sm:text-4xl md:text-5xl lg:text-6xl text-white tracking-wider mb-4 drop-shadow-[4px_4px_0_#101417]">
           TANISHQ YADAV
@@ -86,7 +112,7 @@ export default function Hero() {
         <p className="font-sans text-stone-300 text-sm sm:text-base max-w-2xl mx-auto leading-relaxed mb-8">
           B.Tech CSE (Data Science) student at <strong className="text-emerald-400 font-semibold">Galgotias University</strong>. 
           Former Data Analyst Intern at <strong className="text-cyan-300 font-semibold">Bluestock Fintech</strong> & 
-          <strong className="text-amber-400 font-semibold"> Top 10 Winner in Smart India Hackathon 2025</strong>. 
+          <strong className="text-amber-400 font-semibold"> Top 10 Winner in Smart India Hackathon 2025 (Pre-Qualifier Round)</strong>. 
           Crafting intelligent machine learning models and bulletproof web applications.
         </p>
 
@@ -101,10 +127,21 @@ export default function Hero() {
           </button>
 
           <button
-            onClick={() => handleTeleport('#contact')}
+            onClick={() => {
+              playClickSound();
+              if (onOpenResume) onOpenResume();
+            }}
             className="mc-button mc-button-teal px-6 py-3 text-sm sm:text-base font-pixel tracking-wider flex items-center space-x-2 w-full sm:w-auto justify-center"
           >
-            <Sparkles className="w-5 h-5 text-teal-100" />
+            <FileText className="w-5 h-5 text-teal-100" />
+            <span>VIEW RESUME</span>
+          </button>
+
+          <button
+            onClick={() => handleTeleport('#contact')}
+            className="mc-button px-6 py-3 text-sm sm:text-base font-pixel tracking-wider flex items-center space-x-2 w-full sm:w-auto justify-center text-stone-200"
+          >
+            <Sparkles className="w-5 h-5 text-cyan-300" />
             <span>RESPAWN CHEST</span>
           </button>
         </div>

@@ -12,7 +12,6 @@
     font-family: var(--font-sans);
     background-color: #101418;
     color: #e2e8f0;
-    cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'><path fill='%2300ffcc' stroke='%230f1215' stroke-width='1' d='M16 2h6v6h-2V6h-2V4h-2V2zM14 4h2v2h-2zM12 6h2v2h-2zM10 8h2v2h-2z'/><path fill='%23866043' stroke='%230f1215' stroke-width='1' d='M8 10h2v2H8zM6 12h2v2H6zM4 14h2v2H4zM2 16h2v2H2zM0 18h2v4H0z'/></svg>") 0 0, auto;
     overflow-x: hidden;
   }
 

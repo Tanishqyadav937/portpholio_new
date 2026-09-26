@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Mail, Code, Copy, Check, Sparkles, ArrowUp } from 'lucide-react';
+import { Mail, Code, Copy, Check, Sparkles, ArrowUp, FileText } from 'lucide-react';
 import { playClickSound, playXpSound } from '../utils/sound';
 
 const GithubIcon = ({ className = "w-4 h-4" }) => (
@@ -14,9 +14,9 @@ const LinkedinIcon = ({ className = "w-4 h-4" }) => (
   </svg>
 );
 
-export default function Footer() {
+export default function Footer({ onOpenResume }) {
   const [copied, setCopied] = useState(false);
-  const emailAddress = 'tanishq.yadav.cse@gmail.com';
+  const emailAddress = 'tanishyadav937@gmail.com';
 
   const handleCopyEmail = () => {
     playXpSound();
@@ -33,13 +33,13 @@ export default function Footer() {
   const socialLinks = [
     {
       name: 'GITHUB',
-      url: 'https://github.com/tanishqyadav',
+      url: 'https://github.com/Tanishqyadav937',
       icon: GithubIcon,
       color: 'hover:text-emerald-400',
     },
     {
       name: 'LINKEDIN',
-      url: 'https://linkedin.com/in/tanishqyadav',
+      url: 'https://www.linkedin.com/in/tanishq-yadav-a24656336',
       icon: LinkedinIcon,
       color: 'hover:text-cyan-400',
     },
@@ -102,6 +102,17 @@ export default function Footer() {
 
         {/* Social Buttons Row */}
         <div className="flex flex-wrap items-center justify-center gap-4 mb-12">
+          <button
+            onClick={() => {
+              playClickSound();
+              if (onOpenResume) onOpenResume();
+            }}
+            className="mc-button mc-button-gold px-5 py-3 font-pixel text-xs flex items-center space-x-2 text-stone-900"
+          >
+            <FileText className="w-4 h-4 text-amber-900" />
+            <span>VIEW RESUME LOG</span>
+          </button>
+
           {socialLinks.map((link) => {
             const Icon = link.icon;
             return (
