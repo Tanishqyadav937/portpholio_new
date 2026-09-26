@@ -12,6 +12,7 @@
   "dependencies": {
     "@tailwindcss/vite": "^4.3.3",
     "canvas-confetti": "^1.9.4",
+    "craftfolio": "^1.0.3",
     "framer-motion": "^13.4.1",
     "lucide-react": "^1.47.0",
     "react": "^19.2.8",
